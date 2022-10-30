@@ -1,0 +1,51 @@
+*{
+  border-radius: 5px;
+  color: black; 
+  text-align: center;
+  background: linear-gradient(to right, #6CD0FF, #1C2E4C);
+}
+
+.App{
+  background: linear-gradient(to right, #6CD0FF, #1C2E4C);
+}
+#mainHeader{
+  color: white;
+}
+
+.clearButton{
+  background: white;
+  width: 5rem;
+  
+}
+
+.todo-input{
+  background: white;
+  margin-right: 20px;
+  width:15rem;
+  height: 25px;
+  border: none;
+  /* border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+   */
+}
+
+/* .todo-button{
+  display: none;
+} */
+
+
+.filter-todo{
+  height: 27px;
+  background: white;
+  border: none;
+  /* border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px; */
+}
+
+.input-area{
+  display: flex; 
+  background: none;
+  justify-content: center;
+  gap: 20px;
+  
+}
