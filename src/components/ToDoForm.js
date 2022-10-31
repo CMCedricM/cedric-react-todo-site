@@ -15,6 +15,13 @@ const ToDoForm = ({onNewItem, setInputText}) =>{
     }
 
    
+    const statusHandler = (event) => {
+        return
+        // if(event.target.value === 'completed'){  updateFilter('Completed'); }
+        // else if(event.target.value === 'incomplete'){ updateFilter('incomplete'); }
+        // else{ updateFilter('all'); }
+        // // setStatus(event.target.value);
+    }
 
     return(
         <div className='todo-form'>
@@ -23,10 +30,10 @@ const ToDoForm = ({onNewItem, setInputText}) =>{
             <input type= "text" className="todo-input" placeholder="Type An Item Here" name='toDoInput'/>
             {/* <button className='todo-button' type='submit'>Submit</button> */}
             {/* <button onClick={clearData} className='clear-button'>clear</button> */}
-            <select name='todos' className='filter-todo'> 
+            <select onChange={statusHandler} name='todos' className='filter-todo'> 
                 <option value='all'>Filter: All</option>
-                <option value='completed'>Completed</option>
-                <option  value='incomplete'>Incomplete</option>
+                <option value='completed'>Filter: Completed</option>
+                <option  value='incomplete'>Filter: Incomplete</option>
             </select>
         </form>
 

@@ -2,6 +2,7 @@ import './App.css';
 import ToDoData from './components/ToDoList';
 import ToDoForm from './components/ToDoForm';
 import UseToDoStore from './stores/zustandToDoStore';
+// import { useEffect, useRef } from 'react';
 
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
   const addToList = UseToDoStore((state) => state.updateToDoData);
   const clearData = UseToDoStore((state) => state.removeAllItems);
   const removeAnItem = UseToDoStore((state) => state.removeAnItem )
-  const updateCompeletionStatus = UseToDoStore((state) => state.updateCompletionStatus)
+  const updateCompeletionStatus = UseToDoStore((state) => state.updateCompletionStatus);
   // const setInputText = UseToDoStore((state) => state.setTempData);
   // Sate Variables
   const testData = UseToDoStore((state) => state.toDoListData);
