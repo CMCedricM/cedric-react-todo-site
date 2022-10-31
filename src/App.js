@@ -8,6 +8,9 @@ function App() {
   // Functions to Call in zustandStore
   const addToList = UseToDoStore((state) => state.updateToDoData);
   const clearData = UseToDoStore((state) => state.removeAllItems);
+  const removeAnItem = UseToDoStore((state) => state.removeAnItem )
+  const updateCompeletionStatus = UseToDoStore((state) => state.updateCompletionStatus)
+  // const setInputText = UseToDoStore((state) => state.setTempData);
   // Sate Variables
   const testData = UseToDoStore((state) => state.toDoListData);
  
@@ -18,7 +21,7 @@ function App() {
     <ToDoForm onNewItem={addToList} clearData={clearData}></ToDoForm>
     <button onClick={clearData} className='clearButton'>Clear</button>
     </div>
-    <ToDoData></ToDoData>
+    <ToDoData toDoItems={testData} removeHandler={removeAnItem} completeStatusHandler={updateCompeletionStatus}></ToDoData>
     </div>
   );
 }

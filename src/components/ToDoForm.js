@@ -1,7 +1,7 @@
 import React from "react";
 import uuid from 'react-uuid';
 
-const ToDoForm = ({onNewItem}) =>{
+const ToDoForm = ({onNewItem, setInputText}) =>{
 
     // This will format our to do item for displaying, each item will have a name, a status of whether it is complete or not, and a unique id 
     // For now we are locally saving all this data, may want to upload to a database like firebase for multi users
@@ -9,7 +9,7 @@ const ToDoForm = ({onNewItem}) =>{
         event.preventDefault(); 
         if(!event.target.toDoInput.value){return;}
         let newItem = {itemName : event.target.toDoInput.value, completed: false, id: uuid()};
-        console.log(newItem);
+        // console.log(newItem);
         onNewItem(newItem);
         event.target.toDoInput.value = '';  
     }
@@ -17,7 +17,7 @@ const ToDoForm = ({onNewItem}) =>{
    
 
     return(
-        <div>
+        <div className='todo-form'>
         <form onSubmit={formatAndAppend}> 
             {/* When user presses enter or return automatically append data to their list*/}
             <input type= "text" className="todo-input" placeholder="Type An Item Here" name='toDoInput'/>
