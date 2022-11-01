@@ -12,7 +12,7 @@ const ToDoStore = (set) => ({
   updateToDoData : (aNewToDoItem) => set((state) => ({toDoListData : [aNewToDoItem, ...state.toDoListData], filteredItems : [aNewToDoItem, ...state.toDoListData], toDoCount : (state.toDoListData).length, tempText : ''})), 
   //Handling deletion of data 
   // Create function that will clear toDoList
-  removeAllItems: () => set((state) => ({toDoListData: [], filteredItems: [] , toDoCount : 0 , tempText : ''} )),
+  removeAllItems: () => set((state) => ({toDoListData: [], filteredItems: [] , toDoCount : 0 , tempText : '', filterType : 'none'} )),
   // remove a single item
   removeAnItem: (itemId) => {
     set((state) => ({
@@ -23,10 +23,17 @@ const ToDoStore = (set) => ({
       }))
   },
   // Update Complete Status of an Item 
-  updateCompletionStatus: (itemID) => set((state) => ({toDoListData : state.toDoListData.map((t) => t.id === itemID ? {...t, completed : !t.completed} : t ), filteredItems: state.filteredItems.map((t) => t.id === itemID ? {...t, completed : !t.completed} : t )})),
+  updateCompletionStatus: (itemID) => set((state) => ({toDoListData : state.toDoListData.map((t) => t.id === itemID ? {...t, completed : !t.completed} : t ), filteredItems: updateCompletionHelper(state.toDoListData, itemID, state.filterType)})),
   updateFilterType : (filterStatus) => set((state) => ({filterType : filterStatus, filteredItems : filterStatus !== 'none' ?  filterData(state.toDoListData, filterStatus) : state.toDoListData})),
 })
 
+
+
+const updateCompletionHelper = (data, itemID, filterType) => {
+    let ptr = data.map((t) => t.id === itemID ? {...t, completed : !t.completed} : t); 
+    ptr = filterType !== 'none' ? filterData(ptr, filterType) : ptr;  
+    return ptr;
+}
 const filterData = (data, filterType) => {
   if (filterType === 'completed'){ return data.filter((item) => (item.completed === true)); }
   else if(filterType === 'incomplete'){ return data.filter((item) => (item.completed === false)); }
