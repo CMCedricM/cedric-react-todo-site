@@ -1,7 +1,7 @@
 import React from "react";
 import uuid from 'react-uuid';
 
-const ToDoForm = ({onNewItem, setInputText}) =>{
+const ToDoForm = ({onNewItem, setInputText, setFilter}) =>{
 
     // This will format our to do item for displaying, each item will have a name, a status of whether it is complete or not, and a unique id 
     // For now we are locally saving all this data, may want to upload to a database like firebase for multi users
@@ -15,12 +15,12 @@ const ToDoForm = ({onNewItem, setInputText}) =>{
     }
 
    
-    const statusHandler = (event) => {
-        return
-        // if(event.target.value === 'completed'){  updateFilter('Completed'); }
-        // else if(event.target.value === 'incomplete'){ updateFilter('incomplete'); }
-        // else{ updateFilter('all'); }
-        // // setStatus(event.target.value);
+  
+    const filterHanlder = (event) => {
+        if(event.target.value === 'completed'){ setFilter('completed') }
+        else if(event.target.value === 'incomplete') { setFilter('incomplete'); }
+        else{ setFilter('none'); }
+        return;
     }
 
     return(
@@ -30,7 +30,7 @@ const ToDoForm = ({onNewItem, setInputText}) =>{
             <input type= "text" className="todo-input" placeholder="Type An Item Here" name='toDoInput'/>
             {/* <button className='todo-button' type='submit'>Submit</button> */}
             {/* <button onClick={clearData} className='clear-button'>clear</button> */}
-            <select onChange={statusHandler} name='todos' className='filter-todo'> 
+            <select onChange={filterHanlder} name='todos' className='filter-todo'> 
                 <option value='all'>Filter: All</option>
                 <option value='completed'>Filter: Completed</option>
                 <option  value='incomplete'>Filter: Incomplete</option>

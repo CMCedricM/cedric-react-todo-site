@@ -13,6 +13,11 @@ ul{
   justify-content: center;
   border-style: dotted;
 }
+
+.todo-item-cross{
+  background: none;
+  text-decoration: line-through;
+}
 .btn{
   background: white;
   margin: 20px;
