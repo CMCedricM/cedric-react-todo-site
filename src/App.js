@@ -13,9 +13,9 @@ function App() {
   const updateFilterInfo = UseToDoStore((state) => state.updateFilterType); 
   // const setInputText = UseToDoStore((state) => state.setTempData);
   // State Variables
+  // const testData = UseToDoStore((state) => state.toDoListData)
   const filteredData = UseToDoStore((state) => state.filteredItems);
-  
-  // useEffect(() => {console.log("hello") }, [filteredHolder] )
+
   return (
     <div className="App">
     <h1>Cedric's To Do Site</h1>

@@ -23,10 +23,9 @@ const ToDoStore = (set) => ({
       }))
   },
   // Update Complete Status of an Item 
-  updateCompletionStatus: (itemID) => set((state) => ({toDoListData : state.toDoListData.map((t) => t.id === itemID ? {...t, completed : !t.completed} : t )})),
+  updateCompletionStatus: (itemID) => set((state) => ({toDoListData : state.toDoListData.map((t) => t.id === itemID ? {...t, completed : !t.completed} : t ), filteredItems: state.filteredItems.map((t) => t.id === itemID ? {...t, completed : !t.completed} : t )})),
   updateFilterType : (filterStatus) => set((state) => ({filterType : filterStatus, filteredItems : filterStatus !== 'none' ?  filterData(state.toDoListData, filterStatus) : state.toDoListData})),
 })
-
 
 
 const filterData = (data, filterType) => {
