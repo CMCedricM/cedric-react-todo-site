@@ -11,7 +11,7 @@ ul{
 .todo-item{
   background: none;
   justify-content: center;
-  border-style: dotted;
+  
 }
 
 .todo-item-cross{
@@ -29,9 +29,9 @@ ul{
 .todo{
   display: flex;
   background: none;
-  width: fit-content;
-  flex-basis: 0;
+  width: 15rem;
   justify-content: center;
+  
 
 }
 #mainHeader{
@@ -44,9 +44,18 @@ ul{
   
 }
 
+form{
+  background: none;
+}
+.todo-form{
+  display: flex; 
+  background: none ;
+  justify-content: center;
+}
 .todo-input{
   background: white;
-  margin-right: 20px;
+  margin: 20px;
+ 
   width:15rem;
   height: 25px;
   border: none;
@@ -59,7 +68,11 @@ ul{
   display: none;
 } */
 
-
+.todo-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 .filter-todo{
   height: 27px;
   background: white;

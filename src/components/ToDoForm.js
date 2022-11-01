@@ -30,12 +30,13 @@ const ToDoForm = ({onNewItem, setInputText, setFilter}) =>{
             <input type= "text" className="todo-input" placeholder="Type An Item Here" name='toDoInput'/>
             {/* <button className='todo-button' type='submit'>Submit</button> */}
             {/* <button onClick={clearData} className='clear-button'>clear</button> */}
-            <select onChange={filterHanlder} name='todos' className='filter-todo'> 
+            <select label='Filter' onChange={filterHanlder} name='todos' className='filter-todo'> 
                 <option value='all'>Filter: All</option>
-                <option value='completed'>Filter: Completed</option>
-                <option  value='incomplete'>Filter: Incomplete</option>
+                <option value='completed'>Completed</option>
+                <option  value='incomplete'>Incomplete</option>
             </select>
         </form>
+        
 
         </div>
     );

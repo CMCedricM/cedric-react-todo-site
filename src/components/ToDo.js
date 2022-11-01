@@ -1,5 +1,4 @@
 import React from "react";
-import UseToDoStore from "../stores/zustandToDoStore";
 
 // This will be the html aspects of each to do item list
 const ToDo = ({toDoText, toDo, removeAnItemHandler, completeItemHandler}) => {
