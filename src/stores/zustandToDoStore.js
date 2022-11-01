@@ -27,7 +27,6 @@ const ToDoStore = (set) => ({
   updateFilterType : (filterStatus) => set((state) => ({filterType : filterStatus, filteredItems : filterStatus !== 'none' ?  filterData(state.toDoListData, filterStatus) : state.toDoListData})),
 })
 
-
 const filterData = (data, filterType) => {
   if (filterType === 'completed'){ return data.filter((item) => (item.completed === true)); }
   else if(filterType === 'incomplete'){ return data.filter((item) => (item.completed === false)); }
