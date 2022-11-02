@@ -1,6 +1,6 @@
 import './App.css';
-import ToDoData from './components/ToDoData';
-import ToDoForm from './components/ToDoForm';
+import ToDoData from './components/ToDoData/ToDoData';
+import ToDoForm from './components/toDoForm/ToDoForm';
 import UseToDoStore from './stores/zustandToDoStore';
 
 

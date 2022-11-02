@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="App"
+>
+  <h1>
+    Cedric's To Do Site
+  </h1>
+  <div
+    className="input-area"
+  >
+    <div
+      className="todo-form"
+    >
+      <form
+        onSubmit={[Function]}
+      >
+        <input
+          className="todo-input"
+          data-testid="todo-item-input-field"
+          name="toDoInput"
+          placeholder="Type An Item Here"
+          type="text"
+        />
+        <select
+          className="filter-todo"
+          daa-testid="filter-label"
+          label="Filter"
+          name="todos"
+          onChange={[Function]}
+        >
+          <option
+            value="all"
+          >
+            Filter: All
+          </option>
+          <option
+            value="completed"
+          >
+            Completed
+          </option>
+          <option
+            value="incomplete"
+          >
+            Incomplete
+          </option>
+        </select>
+      </form>
+    </div>
+    <button
+      className="clearButton"
+      onClick={[Function]}
+    >
+      Clear
+    </button>
+  </div>
+  <div
+    className="todo-container"
+  >
+    <ul
+      className="todo-list"
+    />
+  </div>
+</div>
+`;

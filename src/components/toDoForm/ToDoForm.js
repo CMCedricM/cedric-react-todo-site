@@ -1,7 +1,7 @@
 import React from "react";
 import uuid from 'react-uuid';
 
-const ToDoForm = ({onNewItem, setInputText, setFilter}) =>{
+const ToDoForm = ({onNewItem, setFilter}) =>{
 
     // This will format our to do item for displaying, each item will have a name, a status of whether it is complete or not, and a unique id 
     // For now we are locally saving all this data, may want to upload to a database like firebase for multi users
@@ -27,10 +27,10 @@ const ToDoForm = ({onNewItem, setInputText, setFilter}) =>{
         <div className='todo-form'>
         <form onSubmit={formatAndAppend}> 
             {/* When user presses enter or return automatically append data to their list*/}
-            <input type= "text" className="todo-input" placeholder="Type An Item Here" name='toDoInput'/>
+            <input data-testid='todo-item-input-field'type= "text" className="todo-input" placeholder="Type An Item Here" name='toDoInput'/>
             {/* <button className='todo-button' type='submit'>Submit</button> */}
             {/* <button onClick={clearData} className='clear-button'>clear</button> */}
-            <select label='Filter' onChange={filterHanlder} name='todos' className='filter-todo'> 
+            <select daa-testid='filter-label' label='Filter' onChange={filterHanlder} name='todos' className='filter-todo'> 
                 <option value='all'>Filter: All</option>
                 <option value='completed'>Completed</option>
                 <option  value='incomplete'>Incomplete</option>
