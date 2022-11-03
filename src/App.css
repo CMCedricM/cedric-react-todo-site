@@ -2,7 +2,7 @@
   border-radius: 5px;
   color: black; 
   text-align: center;
-  background: linear-gradient(to right, #6CD0FF, #1C2E4C);
+  /* background: linear-gradient(to right, #6CD0FF, #1C2E4C); */
 }
 ul{
   list-style-type: none;
