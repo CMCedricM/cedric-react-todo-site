@@ -1,0 +1,55 @@
+.todo-item-container{
+    border-style: none;
+    display : flex ;
+    justify-content: center;
+    /* align-items: flex-start; */
+    width: 50%;
+    margin: 20px;
+    flex-wrap: wrap;
+    background-color: white;
+    
+}
+
+.todo-item-cross{
+    text-decoration: line-through;
+    padding: 2%;
+    color: black;
+    background: none;
+    width: 50%;
+    overflow : hidden;
+}
+
+.todo-item{
+    padding: 2%;
+    color: black;
+    background: none;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    overflow : hidden;
+    text-decoration: none;
+}
+
+
+.button-holder{
+    height: min-content;
+    justify-content: center;
+    flex-grow: 1;
+    background: none;
+}
+
+
+.todo-item-container li{
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-grow: 1;
+    border-style: none;
+}
+
+.button-holder button{
+    height: 40px;
+    margin-left: 0px;
+    align-items: center;
+    justify-content: center;
+}
