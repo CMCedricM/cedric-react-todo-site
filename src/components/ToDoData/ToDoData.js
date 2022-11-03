@@ -1,5 +1,5 @@
 import React from "react";
-import ToDo from "../ToDo/ToDoItem";
+import ToDo from "../ToDoItem/ToDoItem";
 import uuid from "react-uuid";
 const ToDoData = ({toDoItems, removeHandler, completeItemHandler}) => {
     return(

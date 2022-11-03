@@ -2,33 +2,23 @@
   border-radius: 5px;
   color: black; 
   text-align: center;
-  /* background: linear-gradient(to right, #6CD0FF, #1C2E4C); */
+  background: #1e70e1 /*radial-gradient(circle at center,#6CD0FF, #1C2E4C);*/
+
 }
 ul{
   list-style-type: none;
-  background: none;
-}
-.todo-item{
-  background: none;
-  justify-content: center;
-  
+ 
 }
 
-.todo-item-cross{
-  background: none;
-  text-decoration: line-through;
-}
+
 .btn{
   background: white;
   margin: 20px;
 }
-.App{
-  background: linear-gradient(to right, #6CD0FF, #1C2E4C);
-}
 
 .todo{
   display: flex;
-  background: none;
+  
   width: 15rem;
   justify-content: center;
   
