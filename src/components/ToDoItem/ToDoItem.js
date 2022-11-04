@@ -14,16 +14,16 @@ const ToDo = ({toDoText, toDo, removeAnItemHandler, completeItemHandler,  update
     }
     
 
-    const updateHandler = (event) =>{ 
-        event.preventDefault();
-        console.log(`update ${updateAllowed}`)
-        if(updateAllowed) updateItemName(toDo.id); console.log(`update ${updateAllowed}`); 
-    }
+    // const updateHandler = (event) =>{ 
+    //     event.preventDefault();
+    //     console.log(`update ${updateAllowed}`)
+    //     if(updateAllowed) updateItemName(toDo.id); console.log(`update ${updateAllowed}`); 
+    // }
 
-    const updateFinalizer = () => {
-        finalizeUpdate(toDo.id);
-        refreshList();
-    }
+    // const updateFinalizer = () => {
+    //     finalizeUpdate(toDo.id);
+    //     refreshList();
+    // }
 
     
 
@@ -31,10 +31,10 @@ const ToDo = ({toDoText, toDo, removeAnItemHandler, completeItemHandler,  update
         <div className='todo-item-container'> 
             <div className="todo-text">
             <li className={`todo-item${toDo.completed ? '-cross' : ''}`}>{toDoText}</li>
-            <div className={`update-item${updateAllowed ? '-show' : ''}`}>
+            {/* <div className={`update-item${updateAllowed ? '-show' : ''}`}>
             <input value={updateText} onChange={(e) => setUpdateText(e.target.value)}></input>
             <button className='btn' onClick={updateFinalizer}>Done</button>
-            </div>
+            </div> */}
             </div>
             <span className='button-holder'>
                 <button onClick={completeHandler} className='btn'>{checkItemStatus(toDo.completed)}</button>
