@@ -3,8 +3,10 @@
   color: black; 
   text-align: center;
   justify-content: center;
-  background: #1e70e1 /*radial-gradient(circle at center,#6CD0FF, #1C2E4C);*/
-
+  background: #48829e
+  /* background: linear-gradient(to left,#6CD0FF, #1C2E4C); */
+  /* background-color: ; */
+ 
 }
 
 
