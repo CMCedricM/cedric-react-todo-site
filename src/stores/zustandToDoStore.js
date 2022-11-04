@@ -13,7 +13,8 @@ const ToDoStore = (set) => ({
   filteredItems : [],
   // Variables to allow editing of a to-do-item
   updateInputText : '', 
-  updateAllowed : null, //We need this cause I am not going to allow more than one item to be edited at a time
+  updateInProgress : false,
+  updateAllowed : true, //We need this cause I am not going to allow more than one item to be edited at a time
   setInputText : (inputText) => set((state) => ({toDoInputText : inputText.trim().length === 0 ? '' : inputText})),
   // Create function to add data to a to do list 
   updateToDoData : (aNewToDoItem) => set((state) => ({toDoListData : [aNewToDoItem, ...state.toDoListData], 
@@ -35,11 +36,11 @@ const ToDoStore = (set) => ({
   filterType : state.filteredItems.length === 0 ? state.filterType : 'none'
   })),
    // On update submit allow any updates
-  prepareForItemUpdate: (itemID) => set((state) => ({updateAllowed : false, updateInputText: state.toDoListData.find((item) => item.id === itemID ? item : '') })),
+  prepareForItemUpdate: (itemID) => set((state) => ({updateAllowed : !state.updateAllowed, updateInProgress: !state.updateInProgress, updateInputText: updatePrepHelper(state.toDoListData, itemID) })),
   setUpdateItemText: (updateText) => set((state) => ({updateInputText : updateText})), 
   // Finalize update and allow new updates
   updateItemName: (itemID) => set((state) => ({toDoListData :  state.toDoListData.map((t) => t.id === itemID ? {...t, itemName : state.updateInputText} : t), 
-   updateInputText: '', updateAllowed: true })),
+   updateInputText: '', updateAllowed: true, updateInProgress: false })),
   refreshList: () => set((state) => ({ filteredItems : state.filterType !== 'none' ? filterData(state.toDoListData, state.filterType) : state.toDoListData})),
   // Update Complete Status of an Item 
   updateCompletionStatus: (itemID) => set((state) => ({toDoListData : state.toDoListData.map((t) => t.id === itemID ? {...t, completed : !t.completed} : t ), filteredItems: updateCompletionHelper(state.toDoListData, itemID, state.filterType)})),
@@ -51,6 +52,12 @@ const ToDoStore = (set) => ({
 const addDataHelper = (data, aNewItem, filterType) => {
   let ptr = filterType !== 'none' ? filterData(data, filterType) : [aNewItem, ...data]; 
   return ptr; 
+}
+
+const updatePrepHelper = (data, itemID) => {
+  let ptr = data.find((item) => item.id === itemID ? item : null); 
+  if(!ptr) return ''; 
+  return ptr.itemName;
 }
 
 // This function helps with instantly updating the current view to respect the current filter, 

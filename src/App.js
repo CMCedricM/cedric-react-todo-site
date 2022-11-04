@@ -13,14 +13,17 @@ function App() {
   const removeAnItem = UseToDoStore((state) => state.removeAnItem )
   const updateCompeletionStatus = UseToDoStore((state) => state.updateCompletionStatus);
   const updateFilterInfo = UseToDoStore((state) => state.updateFilterType); 
-
+  // Force a state update when different modules are updating, i.e. we press clear in the ToDoForm and we want the ToDoList to update
+  const filterUpdate= UseToDoStore((state) => state.refreshList);
   // Functions will handle updating a todo-item 
   const perpareItemUpdate = UseToDoStore((state) => state.prepareForItemUpdate); 
   const setUpdateText= UseToDoStore((state) => state.setUpdateItemText); 
   const submitItemNameUpdate = UseToDoStore((state) => state.updateItemName);
-  const itemUpdateAllowed = UseToDoStore((state) => state.updateAllowed);
+  // This will be used to determine whether an update is allowd and also if one item is currently being updated
+  const updateStatus = {itemUpdateAllowed : UseToDoStore((state) => state.updateAllowed), updateInProgress : UseToDoStore((state) => state.updateInProgress)}
+  // Just our update text
   const updateText = UseToDoStore((state) => state.updateInputText);
-  const filterUpdate= UseToDoStore((state) => state.refreshList);
+
 
 
   // State Variables
@@ -43,7 +46,7 @@ function App() {
       updateItemName={perpareItemUpdate} 
       setUpdateText={setUpdateText} 
       finalizeUpdate={submitItemNameUpdate}
-      updateAllowed={itemUpdateAllowed}
+      updateAllowed={updateStatus}
       updateInputText={updateText}
       refreshList={filterUpdate}
       />
