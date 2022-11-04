@@ -11,7 +11,7 @@ const ToDoStore = (set) => ({
   filteredItems : [],
   setInputText : (inputText) => set((state) => ({toDoInputText : inputText.trim().length === 0 ? '' : inputText})),
   // Create function to add data to a to do list 
-  updateToDoData : (aNewToDoItem) => set((state) => ({toDoListData : [aNewToDoItem, ...state.toDoListData], filteredItems : addDataHelper(state.toDoListData, aNewToDoItem, state.filterType), toDoCount : (state.toDoListData).length, tempText : ''})), 
+  updateToDoData : (aNewToDoItem) => set((state) => ({toDoListData : [aNewToDoItem, ...state.toDoListData], filteredItems : addDataHelper(state.toDoListData, aNewToDoItem, state.filterType), toDoCount : (state.toDoListData).length, toDoInputText : ''})), 
   //Handling deletion of data 
   // Create function that will clear toDoList
   removeAllItems: () => set((state) => ({toDoListData: [], filteredItems: [] , toDoCount : 0 , toDoInputText : '', filterType : 'none'} )),

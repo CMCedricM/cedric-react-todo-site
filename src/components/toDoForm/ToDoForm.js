@@ -27,7 +27,7 @@ const ToDoForm = ({onNewItem, setToDoText, toDoText, clearData, setFilter}) =>{
         <div className='todo-form'>
         <form> 
             {/* When user presses enter or return automatically append data to their list*/}
-            <input onChange={(e) => setToDoText(e.target.value)} data-testid='todo-item-input-field'type= "text" className="todo-input" placeholder="Type An Item Here" name='toDoInput'/>
+            <input value={toDoText} onChange={(e) => setToDoText(e.target.value)} data-testid='todo-item-input-field'type= "text" className="todo-input" placeholder="Type An Item Here" name='toDoInput'/>
             {/* <button className='todo-button' type='submit'>Submit</button> */}
             {/* <button onClick={clearData} className='clear-button'>clear</button> */}
             <select daa-testid='filter-label' label='Filter' onChange={filterHanlder} name='todos' className='filter-todo'> 
