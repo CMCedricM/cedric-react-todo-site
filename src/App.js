@@ -20,17 +20,22 @@ function App() {
   const itemUpdateAllowed = UseToDoStore((state) => state.updateAllowed);
   const updateText = UseToDoStore((state) => state.updateInputText);
   const filterUpdate= UseToDoStore((state) => state.refreshList);
+
   // const setInputText = UseToDoStore((state) => state.setTempData);
   // State Variables
   // const testData = UseToDoStore((state) => state.toDoListData)
-  const toDoText = UseToDoStore((state) => state.toDoInputText)
+  const toDoText = UseToDoStore((state) => state.toDoInputText);
   const filteredData = UseToDoStore((state) => state.filteredItems);
+  const filterSettting = UseToDoStore((state) => state.filterType);
 
   return (
     <div className="App">
       <h1>Cedric's To Do Site</h1>
       <div className='input-area'>
-      <ToDoForm onNewItem={addToList} setToDoText={setToDoText} clearData={clearData} toDoText = {toDoText} setFilter={updateFilterInfo}></ToDoForm>
+      <ToDoForm onNewItem={addToList} setToDoText={setToDoText} clearData={clearData} 
+      toDoText = {toDoText} setFilter={updateFilterInfo}
+      filterSetting={filterSettting}
+      ></ToDoForm>
       </div>
       <div className='todo-list-area'>
       <ToDoList toDoItems={filteredData} removeHandler={removeAnItem} completeItemHandler={updateCompeletionStatus}

@@ -37,8 +37,8 @@ const ToDo = ({toDoText, toDo, removeAnItemHandler, completeItemHandler,  update
             </div> */}
             </div>
             <span className='button-holder'>
-                <button onClick={completeHandler} className='btn'>{checkItemStatus(toDo.completed)}</button>
-                <button onClick={deleteHandler}  className = 'btn'>Delete</button>
+                <button onClick={completeHandler} className='btn-for-item'>{checkItemStatus(toDo.completed)}</button>
+                <button onClick={deleteHandler}  className = 'btn-for-item'>Delete</button>
                 {/* <button onClick={updateHandler} className='btn'>Edit</button> */}
             </span>
         </div>

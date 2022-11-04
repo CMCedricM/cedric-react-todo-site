@@ -7,7 +7,7 @@
     width: 50%;
     height: 20%;
     flex-wrap: wrap;
-    background-color: white;
+    background: linear-gradient(to right, #FF9C60, #FFD6B8);
     border: 5px solid;
     box-shadow: 20px 20px;
     margin-bottom: 30px;
@@ -49,6 +49,7 @@
     background: none;
     height: 100%;
     flex-grow: 1;
+    margin-bottom: 1%;
 }
 
 .update-item{
@@ -84,7 +85,7 @@
 
 }
 
-.button-holder button{
+.button-holder .btn-for-item{
     border: 2px solid;
     background-color: white;
     height: 40px;
@@ -94,10 +95,8 @@
     width: fit-content;
 }
 
-.button-holder .btn:hover{
-    color : white;
+.button-holder .btn-for-item:hover{
     font-weight: bold;
-    background-color: orange;
     border: 2px purple solid;
 }
 
