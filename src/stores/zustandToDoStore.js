@@ -30,7 +30,10 @@ const ToDoStore = (set) => ({
       toDoCount : state.toDoListData.length,
       }))
   },
-  removeCurrentView: () => set((state) => ({toDoListData : state.filterType === 'none' ? [] : removeViewHelper(state.toDoListData, state.filterType), filteredItems : state.filterType !== 'none' ? filterData(state.toDoListData, state.filterType) : state.toDoListData})),
+  removeCurrentView: () => set((state) => ({toDoListData : state.filterType === 'none' ? [] : removeViewHelper(state.toDoListData, state.filterType), 
+  filteredItems : state.filterType !== 'none' ? filterData(state.toDoListData, state.filterType) : state.toDoListData,
+  filterType : state.filteredItems.length === 0 ? state.filterType : 'none'
+  })),
    // On update submit allow any updates
   prepareForItemUpdate: (itemID) => set((state) => ({updateAllowed : false, updateInputText: state.toDoListData.find((item) => item.id === itemID ? item : '') })),
   setUpdateItemText: (updateText) => set((state) => ({updateInputText : updateText})), 

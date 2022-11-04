@@ -30,7 +30,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Cedric's To Do Site</h1>
+      <h1>Welcome!</h1>
       <div className='input-area'>
       <ToDoForm onNewItem={addToList} setToDoText={setToDoText} clearData={clearCurrentViewData} 
       toDoText = {toDoText} setFilter={updateFilterInfo}
