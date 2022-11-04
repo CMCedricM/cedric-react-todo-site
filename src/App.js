@@ -21,9 +21,8 @@ function App() {
   const updateText = UseToDoStore((state) => state.updateInputText);
   const filterUpdate= UseToDoStore((state) => state.refreshList);
 
-  // const setInputText = UseToDoStore((state) => state.setTempData);
+
   // State Variables
-  // const testData = UseToDoStore((state) => state.toDoListData)
   const toDoText = UseToDoStore((state) => state.toDoInputText);
   const filteredData = UseToDoStore((state) => state.filteredItems);
   const filterSettting = UseToDoStore((state) => state.filterType);

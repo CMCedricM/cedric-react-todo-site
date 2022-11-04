@@ -24,10 +24,9 @@ const ToDoStore = (set) => ({
   // remove a single item
   removeAnItem: (itemId) => {
     set((state) => ({
-      toDoListData : state.toDoListData.filter(
-        (item) => (item.id !== itemId)),
-      filteredItems : state.toDoListData.filter((item) => (item.id !== itemId)), 
-      toDoCount : state.toDoListData.length
+      toDoListData : state.toDoListData.filter((item) => (item.id !== itemId)), 
+      filteredItems : removeAnItemHelper(state.toDoListData, state.filterType, itemId),
+      toDoCount : state.toDoListData.length,
       }))
   },
    // On update submit allow any updates
@@ -68,6 +67,12 @@ const UseToDoStore = create(devtools(persist(ToDoStore, {
   name: 'localToDoData',
 })))
 
+
+const removeAnItemHelper = (data, filterType, itemID) =>{
+  let ptr = data.filter((t) => t.id !== itemID); 
+  return filterData(ptr, filterType); 
+
+}
   
 
 export default UseToDoStore;
