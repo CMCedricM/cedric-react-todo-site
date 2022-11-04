@@ -51,6 +51,15 @@
     flex-grow: 1;
 }
 
+.update-item{
+    display: none;
+    background: white;
+}
+
+.update-item-show{
+    display: block;
+    background: none;
+}
 .button-holder{
     height: min-content;
     justify-content: center;

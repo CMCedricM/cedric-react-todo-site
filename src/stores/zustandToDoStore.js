@@ -7,14 +7,20 @@ const ToDoStore = (set) => ({
   toDoInputText : '',
   toDoListData : [], //Each element will follow this format: {itemName : 'itemName', completed: false, id: uuid()};
   toDoCount : 0,
+  // Variables to manage filtering
   filterType : 'none', //0 Will indicate 'All', 1 Will Indicate 'Completed', 2 Will Indicate 'Incomplete'
   filteredItems : [],
+  // Variables to allow editing of a to-do-item
+  updateInputText : '', 
+  updateAllowed : null, //We need this cause I am not going to allow more than one item to be edited at a time
   setInputText : (inputText) => set((state) => ({toDoInputText : inputText.trim().length === 0 ? '' : inputText})),
   // Create function to add data to a to do list 
-  updateToDoData : (aNewToDoItem) => set((state) => ({toDoListData : [aNewToDoItem, ...state.toDoListData], filteredItems : addDataHelper(state.toDoListData, aNewToDoItem, state.filterType), toDoCount : (state.toDoListData).length, toDoInputText : ''})), 
+  updateToDoData : (aNewToDoItem) => set((state) => ({toDoListData : [aNewToDoItem, ...state.toDoListData], 
+    filteredItems : addDataHelper(state.toDoListData, aNewToDoItem, state.filterType), 
+    toDoCount : (state.toDoListData).length, toDoInputText : ''})), 
   //Handling deletion of data 
   // Create function that will clear toDoList
-  removeAllItems: () => set((state) => ({toDoListData: [], filteredItems: [] , toDoCount : 0 , toDoInputText : '', filterType : 'none'} )),
+  removeAllItems: () => set((state) => ({toDoListData: [], filteredItems: [] , toDoCount : 0 , toDoInputText : '', filterType : 'none', updateAllowed: true} )),
   // remove a single item
   removeAnItem: (itemId) => {
     set((state) => ({
@@ -24,6 +30,13 @@ const ToDoStore = (set) => ({
       toDoCount : state.toDoListData.length
       }))
   },
+   // On update submit allow any updates
+  prepareForItemUpdate: (itemID) => set((state) => ({updateAllowed : false, updateInputText: state.toDoListData.find((item) => item.id === itemID ? item : '') })),
+  setUpdateItemText: (updateText) => set((state) => ({updateInputText : updateText})), 
+  // Finalize update and allow new updates
+  updateItemName: (itemID) => set((state) => ({toDoListData :  state.toDoListData.map((t) => t.id === itemID ? {...t, itemName : state.updateInputText} : t), 
+   updateInputText: '', updateAllowed: true })),
+  refreshList: () => set((state) => ({ filteredItems : state.filterStatus !== 'none' ? filterData(state.toDoListData, state.filterStatus) : state.toDoListData})),
   // Update Complete Status of an Item 
   updateCompletionStatus: (itemID) => set((state) => ({toDoListData : state.toDoListData.map((t) => t.id === itemID ? {...t, completed : !t.completed} : t ), filteredItems: updateCompletionHelper(state.toDoListData, itemID, state.filterType)})),
   updateFilterType : (filterStatus) => set((state) => ({filterType : filterStatus, filteredItems : filterStatus !== 'none' ?  filterData(state.toDoListData, filterStatus) : state.toDoListData})),
