@@ -39,7 +39,7 @@ const ToDo = ({toDoText, toDo, removeAnItemHandler, completeItemHandler,  update
             <span className='button-holder'>
                 <button onClick={completeHandler} className='btn-for-item'>{checkItemStatus(toDo.completed)}</button>
                 <button onClick={deleteHandler}  className = 'btn-for-item'>Delete</button>
-                {/* <button onClick={updateHandler} className='btn'>Edit</button> */}
+                <button onClick={console.log("Hello")} className='btn-for-item'>Edit</button>
             </span>
         </div>
     );

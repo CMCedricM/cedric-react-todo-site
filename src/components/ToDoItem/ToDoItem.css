@@ -62,8 +62,10 @@
     background: none;
 }
 .button-holder{
+    display: flex;
+    flex-direction: row;
     height: min-content;
-    justify-content: center;
+    justify-content: left;
     flex-grow: 1; 
     width: 20%;
     background: none;
@@ -104,5 +106,6 @@
 @media screen and (max-width:990px){
     .todo-item-container {flex-direction: row; width: 90%; box-shadow: none; margin-bottom: 5%;}
     .todo-item-container li {flex-direction: row; width: 90%; font-weight: normal; border-bottom: 1.7px solid;}
-    .button-holder button {margin: 10%;}
+    .button-holder  { width:auto; flex-direction: column; gap: 5px; margin-top: 2%; margin-bottom: 2%; margin-right: 2%;}
+    .button-holder .btn-for-item{width: 100%; }
 }

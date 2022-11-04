@@ -2,6 +2,7 @@ import create from "zustand";
 import {devtools,persist} from "zustand/middleware";
 
 
+
 // Global State Management of to do data 
 const ToDoStore = (set) => ({
   toDoInputText : '',
@@ -29,13 +30,14 @@ const ToDoStore = (set) => ({
       toDoCount : state.toDoListData.length,
       }))
   },
+  removeCurrentView: () => set((state) => ({toDoListData : state.filterType === 'none' ? [] : removeViewHelper(state.toDoListData, state.filterType), filteredItems : state.filterType !== 'none' ? filterData(state.toDoListData, state.filterType) : state.toDoListData})),
    // On update submit allow any updates
   prepareForItemUpdate: (itemID) => set((state) => ({updateAllowed : false, updateInputText: state.toDoListData.find((item) => item.id === itemID ? item : '') })),
   setUpdateItemText: (updateText) => set((state) => ({updateInputText : updateText})), 
   // Finalize update and allow new updates
   updateItemName: (itemID) => set((state) => ({toDoListData :  state.toDoListData.map((t) => t.id === itemID ? {...t, itemName : state.updateInputText} : t), 
    updateInputText: '', updateAllowed: true })),
-  refreshList: () => set((state) => ({ filteredItems : state.filterStatus !== 'none' ? filterData(state.toDoListData, state.filterStatus) : state.toDoListData})),
+  refreshList: () => set((state) => ({ filteredItems : state.filterType !== 'none' ? filterData(state.toDoListData, state.filterType) : state.toDoListData})),
   // Update Complete Status of an Item 
   updateCompletionStatus: (itemID) => set((state) => ({toDoListData : state.toDoListData.map((t) => t.id === itemID ? {...t, completed : !t.completed} : t ), filteredItems: updateCompletionHelper(state.toDoListData, itemID, state.filterType)})),
   updateFilterType : (filterStatus) => set((state) => ({filterType : filterStatus, filteredItems : filterStatus !== 'none' ?  filterData(state.toDoListData, filterStatus) : state.toDoListData})),
@@ -56,10 +58,18 @@ const updateCompletionHelper = (data, itemID, filterType) => {
     return ptr;
 }
 
+const removeViewHelper = (data, filterType) => {
+  if (filterType === 'completed'){ return data.filter((item) => (item.completed !== true)); }
+  else if(filterType === 'incomplete'){ return data.filter((item) => (item.completed !== false)); }
+  return data;
+}
+
 // This is an important function as it allows me to return data to the calling var in which the data returned respects a given filter setting
 const filterData = (data, filterType) => {
+  console.log(filterType)
   if (filterType === 'completed'){ return data.filter((item) => (item.completed === true)); }
   else if(filterType === 'incomplete'){ return data.filter((item) => (item.completed === false)); }
+  ToDoStore.refreshList();
   return data;
 }
 

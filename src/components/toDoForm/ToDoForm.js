@@ -2,7 +2,7 @@ import React from "react";
 import uuid from 'react-uuid';
 import './ToDoForm.css'
 
-const ToDoForm = ({onNewItem, setToDoText, toDoText, clearData, setFilter, filterSetting}) =>{
+const ToDoForm = ({onNewItem, setToDoText, toDoText, clearData, setFilter, filterSetting, triggerListRefresh}) =>{
 
     // This will format our to do item for displaying, each item will have a name, a status of whether it is complete or not, and a unique id 
     // For now we are locally saving all this data, may want to upload to a database like firebase for multi users
@@ -23,6 +23,11 @@ const ToDoForm = ({onNewItem, setToDoText, toDoText, clearData, setFilter, filte
         return;
     }
 
+    const clearViewHandler = (event) => {
+        event.preventDefault();
+        clearData();
+        triggerListRefresh();
+    }
     return(
         <div>
         <div className='todo-form'>
@@ -38,7 +43,7 @@ const ToDoForm = ({onNewItem, setToDoText, toDoText, clearData, setFilter, filte
             </select>
             <div className='action-area '>
             <button onClick={formatAndAppend} className='btn'>Add Item</button>
-            <button onClick={clearData} className='btn'>Clear</button>
+            <button onClick={clearViewHandler} className='btn'>Clear</button>
         </div>
         </form>
        

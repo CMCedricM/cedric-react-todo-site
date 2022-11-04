@@ -8,7 +8,8 @@ function App() {
   // Functions to Call in zustandStore
   const setToDoText = UseToDoStore((state) => state.setInputText);
   const addToList = UseToDoStore((state) => state.updateToDoData);
-  const clearData = UseToDoStore((state) => state.removeAllItems);
+  // const clearData = UseToDoStore((state) => state.removeAllItems);
+  const clearCurrentViewData = UseToDoStore((state) => state.removeCurrentView);
   const removeAnItem = UseToDoStore((state) => state.removeAnItem )
   const updateCompeletionStatus = UseToDoStore((state) => state.updateCompletionStatus);
   const updateFilterInfo = UseToDoStore((state) => state.updateFilterType); 
@@ -31,9 +32,10 @@ function App() {
     <div className="App">
       <h1>Cedric's To Do Site</h1>
       <div className='input-area'>
-      <ToDoForm onNewItem={addToList} setToDoText={setToDoText} clearData={clearData} 
+      <ToDoForm onNewItem={addToList} setToDoText={setToDoText} clearData={clearCurrentViewData} 
       toDoText = {toDoText} setFilter={updateFilterInfo}
       filterSetting={filterSettting}
+      triggerListRefresh={filterUpdate}
       ></ToDoForm>
       </div>
       <div className='todo-list-area'>
