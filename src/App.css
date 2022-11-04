@@ -2,79 +2,26 @@
   border-radius: 5px;
   color: black; 
   text-align: center;
+  justify-content: center;
   background: #1e70e1 /*radial-gradient(circle at center,#6CD0FF, #1C2E4C);*/
 
 }
-ul{
-  list-style-type: none;
- 
-}
 
 
-.btn{
-  background: white;
-  margin: 20px;
-}
 
-.todo{
-  display: flex;
-  
-  width: 15rem;
-  justify-content: center;
-  
-
-}
 #mainHeader{
   color: white;
 }
 
-.clearButton{
-  background: white;
-  width: 5rem;
-  
-}
 
-form{
-  background: none;
-}
-.todo-form{
-  display: flex; 
-  background: none ;
-  justify-content: center;
-}
 .todo-input{
   background: white;
   margin: 20px;
- 
   width:15rem;
   height: 25px;
   border: none;
-  /* border-bottom-right-radius: 0px;
-  border-top-right-radius: 0px;
-   */
 }
 
-/* .todo-button{
-  display: none;
-} */
 
-.todo-container{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-.filter-todo{
-  height: 27px;
-  background: white;
-  border: none;
-  /* border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px; */
-}
 
-.input-area{
-  display: flex; 
-  background: none;
-  justify-content: center;
-  gap: 20px;
-  
-}
+

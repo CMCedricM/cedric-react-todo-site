@@ -4,15 +4,17 @@ import {devtools,persist} from "zustand/middleware";
 
 // Global State Management of to do data 
 const ToDoStore = (set) => ({
+  toDoInputText : '',
   toDoListData : [], //Each element will follow this format: {itemName : 'itemName', completed: false, id: uuid()};
   toDoCount : 0,
   filterType : 'none', //0 Will indicate 'All', 1 Will Indicate 'Completed', 2 Will Indicate 'Incomplete'
   filteredItems : [],
+  setInputText : (inputText) => set((state) => ({toDoInputText : inputText.trim().length === 0 ? '' : inputText})),
   // Create function to add data to a to do list 
   updateToDoData : (aNewToDoItem) => set((state) => ({toDoListData : [aNewToDoItem, ...state.toDoListData], filteredItems : addDataHelper(state.toDoListData, aNewToDoItem, state.filterType), toDoCount : (state.toDoListData).length, tempText : ''})), 
   //Handling deletion of data 
   // Create function that will clear toDoList
-  removeAllItems: () => set((state) => ({toDoListData: [], filteredItems: [] , toDoCount : 0 , tempText : '', filterType : 'none'} )),
+  removeAllItems: () => set((state) => ({toDoListData: [], filteredItems: [] , toDoCount : 0 , toDoInputText : '', filterType : 'none'} )),
   // remove a single item
   removeAnItem: (itemId) => {
     set((state) => ({

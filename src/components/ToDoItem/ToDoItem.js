@@ -23,10 +23,12 @@ const ToDo = ({toDoText, toDo, removeAnItemHandler, completeItemHandler}) => {
     
     return(
         <div className='todo-item-container'> 
+            <div className="todo-text">
             <li className={`todo-item${toDo.completed ? '-cross' : ''}`}>{toDoText}</li>
+            </div>
             <span className='button-holder'>
-            <button onClick={completeHandler} style={{ marginLeft: 0}}className='btn'>{checkItemStatus(toDo.completed)}</button>
-            <button onClick={deleteHandler} style={{ marginRight: 0}} className = 'btn'>Delete</button>
+                <button onClick={completeHandler} className='btn'>{checkItemStatus(toDo.completed)}</button>
+                <button onClick={deleteHandler}  className = 'btn'>Delete</button>
             </span>
         </div>
     );

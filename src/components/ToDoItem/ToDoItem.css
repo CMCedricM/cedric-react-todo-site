@@ -1,13 +1,21 @@
 .todo-item-container{
     border-style: none;
     display : flex ;
+    flex-direction: row;
     justify-content: center;
-    align-items: flex-start; 
+    align-items: center; 
     width: 50%;
-    margin: 20px;
+    height: 20%;
+    margin: 5px;
     flex-wrap: wrap;
     background-color: white;
+    border: 5px solid;
+    box-shadow: 20px 20px;
     
+}
+
+.todo-item-container:hover{
+    border : 5px solid purple;
 }
 
 .todo-item-cross{
@@ -17,10 +25,11 @@
     background: none;
     width: 50%;
     overflow : hidden;
+    overflow-wrap: break-word;
 }
 
 .todo-item{
-    padding: 2%;
+    padding-top: 5%;
     color: black;
     background: none;
     align-items: center;
@@ -31,26 +40,59 @@
     overflow-wrap: break-word;
 }
 
+.todo-text{
+    margin-left: 10%;
+    width: 50%;
+    background: none;
+    height: 100%;
+    flex-grow: 1;
+}
 
 .button-holder{
+    /* display: flex;
+    margin-left: 10%; */
     height: min-content;
     justify-content: center;
-    flex-grow: 1;
+    flex-grow: 1; 
+    width: 20%;
     background: none;
+    margin-right: 10%;
 }
 
 
 .todo-item-container li{
     align-items: center;
+    width: 50%;
+    text-align: center;
     justify-content: center;
     font-weight: bold;
-    flex-grow: 1;
+    font-size: large;
     border-style: none;
+    background: none;
+    border-bottom: solid;
+    margin-bottom: 5px;
+    border-radius: 0px;
+
 }
 
 .button-holder button{
+    border: 2px solid;
+    background-color: white;
     height: 40px;
-    margin-left: 1px;
     align-items: center;
     justify-content: center;
+    margin-right: 10%;
+}
+
+.button-holder .btn:hover{
+    color : white;
+    font-weight: bold;
+    background-color: orange;
+    border: 2px purple solid;
+}
+
+@media screen and (max-width:990px){
+    .todo-item-container {flex-direction: row; width: 90%; box-shadow: none;}
+    .todo-item-container li {flex-direction: row; width: 90%; font-weight: normal; border-bottom: 1.7px solid;}
+    .button-holder button {margin: 10%;}
 }
