@@ -1,0 +1,23 @@
+.todo-input:hover{
+    border : 2px solid orange;
+}
+.btn{
+    background: white;
+    width: 5rem;
+    height: 25px;
+    border : 1px solid;
+}
+
+.btn:hover{
+    background-color: orange;
+    font-weight: bold;
+
+}
+
+.action-area{
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,19 @@
+.todo-container{
+    display: block;
+    align-items: center;
+}
+
+.todo-list{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+
+.filter-todo{
+  height: 27px;
+  background: white;
+  border: none;
+} 
