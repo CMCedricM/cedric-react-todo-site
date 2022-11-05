@@ -5,7 +5,7 @@ import './ToDoItem.css'
 // This will be the html aspects of each to do item list
 const ToDo = ({toDoText, toDo, removeAnItemHandler, completeItemHandler,  updateItemName, updateAllowed, setUpdateText, updateText, finalizeUpdate, refreshList}) => {
    
-    const deleteHandler = (e) => { e.preventDefault(); removeAnItemHandler(toDo.id); }
+    const deleteHandler = (e) => { removeAnItemHandler(toDo.id);}
 
     const completeHandler = (event) => { completeItemHandler(toDo.id); }
 
@@ -15,11 +15,11 @@ const ToDo = ({toDoText, toDo, removeAnItemHandler, completeItemHandler,  update
     }
     
 
-    const updateHandler = (event) =>{ 
-        event.preventDefault();
-        updateItemName(toDo.id);
+    // const updateHandler = (event) =>{ 
+    //     event.preventDefault();
+    //     updateItemName(toDo.id);
 
-    }
+    // }
 
     // const updateFinalizer = () => {
     //     finalizeUpdate(toDo.id);

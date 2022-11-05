@@ -79,8 +79,13 @@ const filterData = (data, filterType) => {
   console.log(filterType)
   if (filterType === 'completed'){ return data.filter((item) => (item.completed === true)); }
   else if(filterType === 'incomplete'){ return data.filter((item) => (item.completed === false)); }
-  ToDoStore.refreshList();
   return data;
+}
+
+const removeAnItemHelper = (data, filterType, itemID) =>{
+  let ptr = data.filter((t) => t.id !== itemID); 
+  return filterData(ptr, filterType); 
+
 }
 
 const UseToDoStore = create(devtools(persist(ToDoStore, {
@@ -88,11 +93,7 @@ const UseToDoStore = create(devtools(persist(ToDoStore, {
 })))
 
 
-const removeAnItemHelper = (data, filterType, itemID) =>{
-  let ptr = data.filter((t) => t.id !== itemID); 
-  return filterData(ptr, filterType); 
 
-}
   
 
 export default UseToDoStore;
