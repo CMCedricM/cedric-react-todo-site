@@ -3,13 +3,16 @@
   color: black; 
   text-align: center;
   justify-content: center;
-  background: #48829e
+  /* background: #48829e */
   /* background: linear-gradient(to left,#6CD0FF, #1C2E4C); */
   /* background-color: ; */
  
 }
 
-
+body{
+  height: 100vh;
+  background: linear-gradient(to left,#6CD0FF, #1C2E4C);
+}
 
 #mainHeader{
   color: white;
