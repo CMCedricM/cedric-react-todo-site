@@ -1,6 +1,6 @@
 About
 ===================
-My implementation of a simple to do list using Zustand Store as a my global state manager, functional based components, and providing basic tests using the react-testing-library. Thos program is web hosted using vercel, and accessible at <br/>https://cedric-react-todo-site.vercel.app. 
+My implementation of a simple to do list using Zustand Store as a my global state manager, functional based components, and providing basic tests using the react-testing-library. This program is web hosted using vercel, and accessible at <br/>https://cedric-react-todo-site.vercel.app. 
 
 Features
 ===================
