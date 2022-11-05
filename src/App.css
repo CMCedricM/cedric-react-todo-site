@@ -18,6 +18,29 @@ body{
   color: white;
 }
 
+.myFooter{
+  margin: 20px;
+  font-size: small;
+  font-weight: bold;
+  color: white;
+}
+
+.myFooter-div{
+  margin-bottom: 5%;
+  margin-top: 2%;
+}
+
+.myFooter-name{
+  font-size: small;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.myFooter-name:hover{
+  color:orange;
+  font-size:medium;
+}
 
 .todo-input{
   background: white;

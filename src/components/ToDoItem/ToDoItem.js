@@ -11,7 +11,7 @@ const ToDo = ({toDoText, toDo, removeAnItemHandler, completeItemHandler}) =>{//,
     const completeHandler = (event) => { completeItemHandler(toDo.id); }
 
     const checkItemStatus = (completionStatus) =>{
-        if(completionStatus) return "Incomplete"
+        if(completionStatus) return "Uncomplete"
         else return "Complete"
     }
     

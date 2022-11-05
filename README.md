@@ -10,10 +10,12 @@ Features
 - Filtering to show specific items
 - Clearing of All items that are in the current filter setting
 - Interactive UI using CSS pseudo-classes
+- Provides a layout for Smaller Screened Devices (i.e. phones)
 
 Notes 
 ===================
 - To clear local storage of my to-do-site please select ```Filter: All``` from the filter dropdown, then press the ```clear``` button.
+- Pressing Clear On the ```Filter: All``` Setting will result in a clearing of all local to-do data
 
 Getting Started
 ===================

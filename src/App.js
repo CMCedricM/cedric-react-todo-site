@@ -53,6 +53,9 @@ function App() {
       refreshList={filterUpdate}
       />
       </div>
+      <div className="myFooter-div">
+      <footer className="myFooter">Created by <a className="myFooter-name" style={{margin: 1}} href="https://www.cmcedricm.com/">Cedric Men</a></footer>
+      </div>
     </div>
   );
 }
