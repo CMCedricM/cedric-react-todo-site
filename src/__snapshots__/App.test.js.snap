@@ -5,62 +5,79 @@ exports[`matches snapshot 1`] = `
   className="App"
 >
   <h1>
-    Cedric's To Do Site
+    Welcome!
   </h1>
   <div
     className="input-area"
   >
-    <div
-      className="todo-form"
-    >
-      <form
-        onSubmit={[Function]}
+    <div>
+      <div
+        className="todo-form"
       >
-        <input
-          className="todo-input"
-          data-testid="todo-item-input-field"
-          name="toDoInput"
-          placeholder="Type An Item Here"
-          type="text"
-        />
-        <select
-          className="filter-todo"
-          daa-testid="filter-label"
-          label="Filter"
-          name="todos"
-          onChange={[Function]}
-        >
-          <option
+        <form>
+          <input
+            className="todo-input"
+            data-testid="todo-item-input-field"
+            name="toDoInput"
+            onChange={[Function]}
+            placeholder="Type An Item Here"
+            type="text"
+            value=""
+          />
+          <select
+            className="filter-todo"
+            daa-testid="filter-label"
+            label="Filter"
+            name="todos"
+            onChange={[Function]}
             value="all"
           >
-            Filter: All
-          </option>
-          <option
-            value="completed"
+            <option
+              value="all"
+            >
+              Filter: All
+            </option>
+            <option
+              value="completed"
+            >
+              Completed
+            </option>
+            <option
+              value="incomplete"
+            >
+              Incomplete
+            </option>
+          </select>
+          <div
+            className="action-area "
           >
-            Completed
-          </option>
-          <option
-            value="incomplete"
-          >
-            Incomplete
-          </option>
-        </select>
-      </form>
+            <button
+              className="btn"
+              onClick={[Function]}
+            >
+              Add Item
+            </button>
+            <button
+              className="btn"
+              onClick={[Function]}
+            >
+              Clear
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-    <button
-      className="clearButton"
-      onClick={[Function]}
-    >
-      Clear
-    </button>
   </div>
   <div
-    className="todo-container"
+    className="todo-list-area"
   >
-    <ul
-      className="todo-list"
-    />
+    <div
+      className="todo-container"
+    >
+      <ul
+        className="todo-list"
+      />
+    </div>
   </div>
 </div>
 `;

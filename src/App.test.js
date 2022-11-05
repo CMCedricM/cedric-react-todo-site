@@ -16,7 +16,7 @@ it('matches snapshot', () => {
 // Test Whether The Webpage itself loaded or not
 it('renders header', () => {
   render(<App />)
-  const linkElement = screen.getByText(/Cedric's To Do Site/i);
+  const linkElement = screen.getByText(/Welcome!/i);
   expect(linkElement).toBeInTheDocument();
 });
 
