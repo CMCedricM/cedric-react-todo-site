@@ -79,5 +79,25 @@ exports[`matches snapshot 1`] = `
       />
     </div>
   </div>
+  <div
+    className="myFooter-div"
+  >
+    <footer
+      className="myFooter"
+    >
+      Created by 
+      <a
+        className="myFooter-name"
+        href="https://www.cmcedricm.com/"
+        style={
+          Object {
+            "margin": 1,
+          }
+        }
+      >
+        Cedric Men
+      </a>
+    </footer>
+  </div>
 </div>
 `;
