@@ -4,7 +4,9 @@ exports[`matches snapshot 1`] = `
 <div
   className="App"
 >
-  <h1>
+  <h1
+    id="mainHeader"
+  >
     Welcome!
   </h1>
   <div
