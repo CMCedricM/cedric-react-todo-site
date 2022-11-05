@@ -2,11 +2,12 @@ import React from "react";
 import './ToDoItem.css'
 
 
-// This will be the html aspects of each to do item list
-const ToDo = ({toDoText, toDo, removeAnItemHandler, completeItemHandler,  updateItemName, updateAllowed, setUpdateText, updateText, finalizeUpdate, refreshList}) => {
+// This will be the html aspects of each to do item list                            //These variables were to help with editing an item (not impletmented)
+const ToDo = ({toDoText, toDo, removeAnItemHandler, completeItemHandler}) =>{//,  updateItemName, updateAllowed, setUpdateText, updateText, finalizeUpdate, refreshList}) => {
    
+    // Handle the deletion of an item, by calling a function from the zustand store file
     const deleteHandler = (e) => { removeAnItemHandler(toDo.id);}
-
+    // Set the completion status of an item using a function from the zustand store file provided by some propls
     const completeHandler = (event) => { completeItemHandler(toDo.id); }
 
     const checkItemStatus = (completionStatus) =>{

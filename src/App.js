@@ -15,7 +15,8 @@ function App() {
   const updateFilterInfo = UseToDoStore((state) => state.updateFilterType); 
   // Force a state update when different modules are updating, i.e. we press clear in the ToDoForm and we want the ToDoList to update
   const filterUpdate= UseToDoStore((state) => state.refreshList);
-  // Functions will handle updating a todo-item 
+  /*
+  // Functions will handle updating a todo-item (Was Planned but not implemented)
   const perpareItemUpdate = UseToDoStore((state) => state.prepareForItemUpdate); 
   const setUpdateText= UseToDoStore((state) => state.setUpdateItemText); 
   const submitItemNameUpdate = UseToDoStore((state) => state.updateItemName);
@@ -23,6 +24,7 @@ function App() {
   const updateStatus = {itemUpdateAllowed : UseToDoStore((state) => state.updateAllowed), updateInProgress : UseToDoStore((state) => state.updateInProgress)}
   // Just our update text
   const updateText = UseToDoStore((state) => state.updateInputText);
+  */
 
 
 
@@ -43,11 +45,11 @@ function App() {
       </div>
       <div className='todo-list-area'>
       <ToDoList toDoItems={filteredData} removeHandler={removeAnItem} completeItemHandler={updateCompeletionStatus}
-      updateItemName={perpareItemUpdate} 
-      setUpdateText={setUpdateText} 
-      finalizeUpdate={submitItemNameUpdate}
-      updateAllowed={updateStatus}
-      updateInputText={updateText}
+      // updateItemName={perpareItemUpdate} 
+      // setUpdateText={setUpdateText} 
+      // finalizeUpdate={submitItemNameUpdate}
+      // updateAllowed={updateStatus}
+      // updateInputText={updateText}
       refreshList={filterUpdate}
       />
       </div>

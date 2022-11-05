@@ -3,7 +3,7 @@ import App from './App';
 import user from '@testing-library/user-event'
 import renderer from "react-test-renderer"
 
-
+// Clean all rendered items after each test
 afterEach(cleanup);
 
 // Watch that I didn't accidently delete any important components from the code
@@ -30,15 +30,16 @@ it('adds data to form, changes filters, and then clears', () => {
   user.click(getClearButton());
 });
 
-
+// Gets the to do input box from the todoform componenet
 const getToDoInputBox = () => {
   return screen.getByRole('textbox');
 }
-
+// Gets the filter box from the todoform component
 const getFilterBox = () => {
   return screen.getByRole('combobox'); 
 }
 
+// Gets the clear button from the todoform component
 const getClearButton = () => {
   return screen.getByRole('button', {
       name: /clear/i
