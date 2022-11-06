@@ -15,7 +15,7 @@ Features
 Notes 
 ===================
 - To clear local storage of my to-do-site please select ```Filter: All``` from the filter dropdown, then press the ```clear``` button.
-- Pressing Clear On the ```Filter: All``` Setting will result in a clearing of all local to-do data
+- Pressing Clear On the ```Filter: All``` Setting will result in a clearing of all local to-do data.
 
 Getting Started
 ===================
@@ -33,4 +33,11 @@ Usage
 Running Testing Libraries 
 ===================
 ```npm test```
+<br><br>
+Tests include: 
+- Structure of HTML when rendered matches original snapshot 
+- Ensures 'add-item' bar renders
+- Buttons all render and are functional in the 'add-item' bar
+- Each to-do-list item has appropriate html code for 'edit' and 'delete' 
+- When a button is pressed for a todo item, ensures the buttons perform the written test functions
 
